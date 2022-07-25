@@ -1,1 +1,1 @@
-# 一个简单的websocket server和测试页面
+# A simple websocket server and test page.
