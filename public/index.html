@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="https://dev.limkim.xyz/favicon.ico" type="image/x-icon">
-    <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"></script>
-    <link href="https://unpkg.com/layui@2.7.5/dist/css/layui.css" rel="stylesheet">
-    <script src="https://unpkg.com/layui@2.7.5/dist/layui.js"></script>
+    <script src="https://cdn.limkim.cn/jquery/dist/jquery.js"></script>
+    <link href="https://cdn.limkim.cn/layui/dist/css/layui.css" rel="stylesheet">
+    <script src="https://cdn.limkim.cn/layui/dist/layui.js"></script>
     <title>测试</title>
     <style>
         .first {
@@ -100,7 +100,7 @@
         $("#start").on("click", () => {
 
             const url = form.val("socket_start").socket_url
-            if (url === "") return false;
+            if (url === "" || socket) return false;
             layer.load(0);
             socket = new WebSocket(url);
             socket.onopen = () => {
