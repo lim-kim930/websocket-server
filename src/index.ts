@@ -1,16 +1,17 @@
-import WebSocket, { WebSocketServer } from 'ws';
+import { WebSocketServer } from 'ws';
 
+// more available options: https://github.com/websockets/ws/blob/HEAD/doc/ws.md#new-websocketserveroptions-callback
 const wss = new WebSocketServer({
     port: 3001,
-    //   perMessageDeflate: {
+    // perMessageDeflate: {
     //     zlibDeflateOptions: {
-    //       // See zlib defaults.
-    //       chunkSize: 1024,
-    //       memLevel: 7,
-    //       level: 3
+    //         // See zlib defaults.
+    //         chunkSize: 1024,
+    //         memLevel: 7,
+    //         level: 3
     //     },
     //     zlibInflateOptions: {
-    //       chunkSize: 10 * 1024
+    //         chunkSize: 10 * 1024
     //     },
     //     // Other options settable:
     //     clientNoContextTakeover: true, // Defaults to negotiated value.
@@ -20,9 +21,10 @@ const wss = new WebSocketServer({
     //     concurrencyLimit: 10, // Limits zlib concurrency for perf.
     //     threshold: 1024 // Size (in bytes) below which messages
     //     // should not be compressed if context takeover is disabled.
-    //   }
+    // }
 });
 
+// more available callback events: https://github.com/websockets/ws/blob/HEAD/doc/ws.md#new-websocketserveroptions-callback
 wss.on("listening", () => {
     console.log("serve is running on 3001");
 });
